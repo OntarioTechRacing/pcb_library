@@ -5,12 +5,12 @@
 # Check and verify library integrity with distributor APIs.
 ################################################################################
 
-name: Check Library
+name: Library Integrity Check with Distributor APIs
 
 on: [ push, pull_request ]
 
 jobs:
-  library:
+  distributor_apis:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,4 +32,4 @@ jobs:
           MOUSER_API_VERSION: ${{ secrets.MOUSER_API_VERSION }}
           MOUSER_API_KEY: ${{ secrets.MOUSER_API_KEY }}
           # NOTE: Setup as GitHub organization or repository secrets.
-        run: python .github/workflows/check_symbols.py
+        run: python .github/workflows/distributor_apis.py
